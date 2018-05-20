@@ -19,6 +19,7 @@
             <label class = "control-label col-md-2">Project ID</label> 
             <div class="col-md-10">
                     <select  formControlName="projectid">
+                            <option value="" selected disabled hidden>Choose here</option>
                             <option *ngFor="let str of projects" value="{{str.projectid}}">{{str.projectname}}</option>
                     </select>
               <div *ngIf="formdata.controls.projectid.errors && (formdata.controls.projectid.dirty || formdata.controls.projectid.touched)" class="alert-danger">

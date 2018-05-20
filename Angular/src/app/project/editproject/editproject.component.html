@@ -17,8 +17,8 @@
 
         <div class="form-group">
             <label class = "control-label col-md-2">Start Date</label> 
-            <div class="col-md-10">
-              <input type="text" formControlName="startdate"  value="" class = "control-label col-md-2">
+            <div class="col-md-10.5">
+              <input type="date" formControlName="startdate"  value="" class = "control-label col-md-2">
               <div *ngIf="formdata.controls.startdate.errors && (formdata.controls.startdate.dirty || formdata.controls.startdate.touched)" class="alert-danger">
                     <div *ngIf="formdata.controls.startdate.errors.required">
                         Start Date  is Required
@@ -32,8 +32,8 @@
 
         <div class="form-group">
             <label class = "control-label col-md-2">End Date</label> 
-            <div class="col-md-10">
-                <input type="text" formControlName="enddate"  value="" class = "control-label col-md-2">
+            <div class="col-md-10.5">
+                <input type="date" formControlName="enddate"  value="" class = "control-label col-md-2">
                 <div *ngIf="formdata.controls.enddate.errors && (formdata.controls.enddate.dirty || formdata.controls.enddate.touched)" class="alert-danger">
                         <div *ngIf="formdata.controls.enddate.errors.required">
                             End Date  is Required
