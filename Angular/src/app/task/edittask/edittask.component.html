@@ -5,7 +5,7 @@
         <div class="form-group">
             <label class = "control-label col-md-2">Assigned To</label> 
                 <div class="col-md-10.5">
-                    <select  formControlName="empid">
+                    <select class="custom-select"  formControlName="empid">
                             <option value="" selected disabled hidden>Choose here</option>
                             <option *ngFor="let emp of employees" value="{{emp.employeeid}}">{{emp.employeename}}</option>
                     </select>
@@ -45,7 +45,7 @@
         <div class="form-group">
             <label class = "control-label col-md-2">Task Completion</label> 
             <div class="col-md-10.5">
-                    <select  formControlName="taskcompletion">
+                    <select class="custom-select"  formControlName="taskcompletion">
                             <option value="Completed">Completed</option>
                             <option value="Not Completed">Not Completed</option>
                     </select>
@@ -61,7 +61,7 @@
         <div class="form-group">
             <label class = "control-label col-md-2">User Story ID</label> 
             <div class="col-md-10.5">
-                    <select  formControlName="userstoryid">
+                    <select class="custom-select"  formControlName="userstoryid">
                             <option value="" selected disabled hidden>Choose here</option>
                             <option *ngFor="let str of stories" value="{{str.userstoryid}}">{{str.userstoryid}}</option>
                     </select>
