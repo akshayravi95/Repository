@@ -1,10 +1,10 @@
 <h3>Create</h3>
 <form [formGroup]="formdata" (ngSubmit)="onclicksubmit(formdata.value)">
-    <div class="form-horizontal">
-        <h4>Project</h4>
+    <div class="form-vertical align-content-start">
+        <h5>Project</h5>
         <div class="form-group">
             <label class = "control-label col-md-2">Project Name</label> 
-            <div class="col-md-10">
+            <div class="col-md-10.5">
               <input type="text" formControlName="projectname" value="" class = "control-label col-md-2">
               <div *ngIf="formdata.controls.projectname.errors && (formdata.controls.projectname.dirty || formdata.controls.projectname.touched)" class="alert-danger">
                     <div *ngIf="formdata.controls.projectname.errors.required">
@@ -45,7 +45,7 @@
 
         <div class="form-group">
             <label class = "control-label col-md-2">Client Name</label> 
-            <div class="col-md-10">
+            <div class="col-md-10.5">
               <input type="text" formControlName="clientname"  value="" class = "control-label col-md-2">
               <div *ngIf="formdata.controls.clientname.errors && (formdata.controls.clientname.dirty || formdata.controls.clientname.touched)" class="alert-danger">
                     <div *ngIf="formdata.controls.clientname.errors.required">
@@ -58,7 +58,7 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-success" [disabled] = "!formdata.valid" />
-            |<a href="./Projects/show">Back</a>
+            |<a href="./Projects/show"> Back</a>
             </div>
         </div>
     </div>

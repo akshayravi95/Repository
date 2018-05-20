@@ -1,17 +1,18 @@
 <h3>Delete</h3>
 <h4>Are you sure you want to delete this?</h4>
+<br>
 <form  (ngSubmit)="onclicksubmit()">
     <div class="form-horizontal">
-        <h4>User Story</h4>
+     
         <div class="form-group">
-            <label class = "control-label col-md-2">Story</label> 
+            <label class = "control-label col-md-2 float-left">Story</label> 
             <div class="col-md-10">
                 <label class = "control-label col-md-2">{{stor?.story}}</label> 
             </div>
         </div>
 
         <div class="form-group">
-            <label class = "control-label col-md-2">Project ID</label> 
+            <label class = "control-label col-md-2 float-left">Project ID</label> 
             <div class="col-md-10">
                 <label class = "control-label col-md-2">{{stor?.projectid}}</label>
             </div>
@@ -19,7 +20,7 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Delete" class="btn btn-danger" />
-                | <a href="./UserStories/show">Back</a>
+                | <a href="./UserStories/show"> Back</a>
             </div>
         </div>
     </div>

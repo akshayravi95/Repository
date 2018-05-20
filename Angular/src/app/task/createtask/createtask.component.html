@@ -1,10 +1,10 @@
 <h3>Create</h3>
 <form [formGroup]="formdata" (ngSubmit)="onclicksubmit(formdata.value)">
-    <div class="form-horizontal">
+    <div class="form-vertical">
         <h4>Tasks</h4>
         <div class="form-group">
             <label class = "control-label col-md-2">Assigned To</label> 
-                <div class="col-md-10">
+                <div class="col-md-10.5">
                     <select  formControlName="empid">
                             <option value="" selected disabled hidden>Choose here</option>
                             <option *ngFor="let emp of employees" value="{{emp.employeeid}}">{{emp.employeename}}</option>
@@ -44,8 +44,9 @@
 
         <div class="form-group">
             <label class = "control-label col-md-2">Task Completion</label> 
-            <div class="col-md-10">
+            <div class="col-md-10.5">
                     <select  formControlName="taskcompletion">
+                            <option value="" selected disabled hidden>Choose here</option>
                             <option value="Completed">Completed</option>
                             <option value="Not Completed">Not Completed</option>
                     </select>
@@ -60,7 +61,7 @@
 
         <div class="form-group">
             <label class = "control-label col-md-2">User Story ID</label> 
-            <div class="col-md-10">
+            <div class="col-md-10.5">
                     <select  formControlName="userstoryid">
                             <option value="" selected disabled hidden>Choose here</option>
                             <option *ngFor="let str of stories" value="{{str.userstoryid}}">{{str.userstoryid}}</option>
@@ -76,7 +77,7 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-success" [disabled] = "!formdata.valid" />
-            |<a href="./Tasks/show">Back</a>
+            |<a href="./Tasks/show"> Back</a>
             </div>
         </div>
     </div>
