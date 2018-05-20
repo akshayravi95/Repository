@@ -1,0 +1,47 @@
+<h3>Delete</h3>
+<h4>Are you sure you want to delete this?</h4>
+
+<form (ngSubmit)="onclicksubmit()">
+    <div class="form-horizontal">
+        <h4>Tasks</h4>
+        <div class="form-group">
+            <label class = "control-label col-md-2">Employee ID</label> 
+            <div class="col-md-10">
+                <label class = "control-label col-md-2">{{task?.empid}}</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Task Start Date</label> 
+            <div class="col-md-10">
+                <label class = "control-label col-md-2">{{task?.taskstartdate}}</label>
+            </div>
+          </div>
+        <div class="form-group">
+            <label class = "control-label col-md-2">Task End Date</label> 
+            <div class="col-md-10">
+                <label class = "control-label col-md-2">{{task?.taskenddate}}</label> 
+              </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Task Completion</label> 
+            <div class="col-md-10">
+                <label class = "control-label col-md-2">{{task?.taskcompletion}}</label> 
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">User Story ID</label> 
+            <div class="col-md-10">
+                <label class = "control-label col-md-2">{{task?.userstoryid}}</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                |<a href="./Tasks/show">Back</a>
+            </div>
+        </div>
+    </div>
+</form>

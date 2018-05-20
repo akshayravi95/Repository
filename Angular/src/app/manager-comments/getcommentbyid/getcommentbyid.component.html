@@ -1,0 +1,24 @@
+<h1>Task Details</h1>
+<p><a href="./Comments/create/{{this.id}}">Create</a></p>
+ <h4>Comments</h4>
+        <table class="table table-striped ">
+          <tr>
+            <th>Comments</th>
+            <th>Task ID</th>
+            <th>Actions</th>
+          </tr>
+          <tr *ngFor="let comment of comments">
+            <td>{{comment.comments}}</td>
+            <td>{{comment.taskid}}</td>
+            <td><a href="/Comments/edit/{{comment.managerid}}">Edit</a> ||
+            <a href="./Comments/delete/{{comment.managerid}}">Delete</a></td>
+          </tr>
+        </table>
+        <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-2 col-md-10">
+                <a href="/Tasks/show">Back</a>
+            </div>
+        </div>
+      
+
+

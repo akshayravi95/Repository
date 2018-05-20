@@ -1,0 +1,81 @@
+<h3>Create</h3>
+<form [formGroup]="formdata" (ngSubmit)="onclicksubmit(formdata.value)">
+    <div class="form-horizontal">
+        <h4>Tasks</h4>
+        <div class="form-group">
+            <label class = "control-label col-md-2">Assigned To</label> 
+                <div class="col-md-10">
+                    <select  formControlName="empid">
+                            <option *ngFor="let emp of employees" value="{{emp.employeeid}}">{{emp.employeename}}</option>
+                    </select>
+                <div *ngIf="formdata.controls.empid.errors && (formdata.controls.empid.dirty || formdata.controls.empid.touched)" class="alert-danger">
+                    <div *ngIf="formdata.controls.empid.errors.required">
+                        Assigned To is Required
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Task Start Date</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="taskstartdate" value="" class = "control-label col-md-2">
+                <div *ngIf="formdata.controls.taskstartdate.errors && (formdata.controls.taskstartdate.dirty || formdata.controls.taskstartdate.touched)" class="alert-danger">
+                    <div *ngIf="formdata.controls.taskstartdate.errors.required">
+                        Task Start Date is Required
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class = "control-label col-md-2">Task End Date</label> 
+            <div class="col-md-10">
+                <input type="text" formControlName="taskenddate" value="" class = "control-label col-md-2">
+                <div *ngIf="formdata.controls.taskenddate.errors && (formdata.controls.taskenddate.dirty || formdata.controls.taskenddate.touched)" class="alert-danger">
+                    <div *ngIf="formdata.controls.taskenddate.errors.required">
+                        Task End Date is Required
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Task Completion</label> 
+            <div class="col-md-10">
+                    <select  formControlName="taskcompletion">
+                            <option value="Completed">Completed</option>
+                            <option value="Not Completed">Not Completed</option>
+                    </select>
+                <div *ngIf="formdata.controls.taskcompletion.errors && (formdata.controls.taskcompletion.dirty || formdata.controls.taskcompletion.touched)" class="alert-danger">
+                    <div *ngIf="formdata.controls.taskcompletion.errors.required">
+                        Task Completion is Required
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">User Story ID</label> 
+            <div class="col-md-10">
+                    <select  formControlName="userstoryid">
+                            <option *ngFor="let str of stories" value="{{str.userstoryid}}">{{str.userstoryid}}</option>
+                    </select>
+                <div *ngIf="formdata.controls.userstoryid.errors && (formdata.controls.userstoryid.dirty || formdata.controls.userstoryid.touched)" class="alert-danger">
+                    <div *ngIf="formdata.controls.userstoryid.errors.required">
+                         User Story ID is Required
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success" [disabled] = "!formdata.valid" />
+            |<a href="./Tasks/show">Back</a>
+            </div>
+        </div>
+    </div>
+</form>

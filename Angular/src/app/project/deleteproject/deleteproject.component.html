@@ -1,0 +1,45 @@
+<h3>Delete</h3>
+<h4>Are you sure you want to delete this?</h4>
+<form (ngSubmit)="onclicksubmit()">
+    <div class="form-horizontal">
+        <h4>Project</h4>
+        <div class="form-group">
+            <label class = "control-label col-md-2">Project Name</label> 
+            <div class="col-md-10">
+            <label class = "control-label col-md-2">{{project?.projectname}}</label> 
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Start Date</label> 
+            <div class="col-md-10">
+            <label class = "control-label col-md-2">{{project?.startdate}}</label> 
+            </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">End Date</label> 
+            <div class="col-md-10">
+            <label class = "control-label col-md-2">{{project?.enddate}}</label>
+              </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Client Name</label> 
+            <div class="col-md-10">
+            <label class = "control-label col-md-2">{{project?.clientname}}</label> 
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+              |  <a href="./Projects/show">Back</a> 
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+       
+</div>

@@ -1,0 +1,65 @@
+<h3>Edit</h3>
+<form [formGroup]="formdata" (ngSubmit)="onclicksubmit(formdata.value)">
+    <div class="form-horizontal">
+        <h4>Project</h4>
+        <div class="form-group">
+            <label class = "control-label col-md-2">Project Name</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="projectname" value="" class = "control-label col-md-2">
+              <div *ngIf="formdata.controls.projectname.errors && (formdata.controls.projectname.dirty || formdata.controls.projectname.touched)" class="alert-danger">
+                    <div *ngIf="formdata.controls.projectname.errors.required">
+                        Name is Required
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Start Date</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="startdate"  value="" class = "control-label col-md-2">
+              <div *ngIf="formdata.controls.startdate.errors && (formdata.controls.startdate.dirty || formdata.controls.startdate.touched)" class="alert-danger">
+                    <div *ngIf="formdata.controls.startdate.errors.required">
+                        Start Date  is Required
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">End Date</label> 
+            <div class="col-md-10">
+                <input type="text" formControlName="enddate"  value="" class = "control-label col-md-2">
+                <div *ngIf="formdata.controls.enddate.errors && (formdata.controls.enddate.dirty || formdata.controls.enddate.touched)" class="alert-danger">
+                        <div *ngIf="formdata.controls.enddate.errors.required">
+                            End Date  is Required
+                            
+                        </div>
+                    </div> 
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Client Name</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="clientname"  value="" class = "control-label col-md-2">
+              <div *ngIf="formdata.controls.clientname.errors && (formdata.controls.clientname.dirty || formdata.controls.clientname.touched)" class="alert-danger">
+                    <div *ngIf="formdata.controls.clientname.errors.required">
+                        Client Name is Required
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Update" class="btn btn-primary" [disabled] = "!formdata.valid" />
+               | <a href="./Projects/show">Back</a> 
+            </div>
+        </div>
+    </div>
+</form>

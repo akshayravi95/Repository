@@ -1,0 +1,41 @@
+<h3>Edit</h3>
+<form [formGroup]="formdata" (ngSubmit)="onclicksubmit(formdata.value)">
+    <div class="form-horizontal">
+        <h4>User Story</h4>
+        <div class="form-group">
+            <label class = "control-label col-md-2">Story</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="story" value="" class = "control-label col-md-2">
+              <div *ngIf="formdata.controls.story.errors && (formdata.controls.story.dirty || formdata.controls.story.touched)" class="alert-danger">
+                <div *ngIf="formdata.controls.story.errors.required">
+                     Story  is Required
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Project ID</label> 
+            <div class="col-md-10">
+                    <select  formControlName="projectid">
+                            <option *ngFor="let str of projects" value="{{str.projectid}}">{{str.projectname}}</option>
+                    </select>
+              <div *ngIf="formdata.controls.projectid.errors && (formdata.controls.projectid.dirty || formdata.controls.projectid.touched)" class="alert-danger">
+                <div *ngIf="formdata.controls.projectid.errors.required">
+                     Project ID is Required
+                    
+                </div>
+            </div>
+            </div>
+          </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Update" class="btn btn-primary" [disabled] = "!formdata.valid" />
+               | <a href="./UserStories/show">Back</a>                
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+</div>

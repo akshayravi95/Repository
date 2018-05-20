@@ -1,0 +1,90 @@
+<h3>Edit</h3>
+<form [formGroup]="formdata" (ngSubmit)="onclicksubmit(formdata.value)">
+    <div class="form-horizontal">
+        <h4>Employees</h4>
+        <div class="form-group">
+            <label class = "control-label col-md-2">Employee Name</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="employeename" value="" class = "control-label col-md-2"> 
+              <div *ngIf="formdata.controls.employeename.errors && (formdata.controls.employeename.dirty || formdata.controls.employeename.touched)" class="alert-danger">
+                <div *ngIf="formdata.controls.employeename.errors.required">
+                    Name is Required
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Designation</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="designation" value="" class = "control-label col-md-2">
+              <div *ngIf="formdata.controls.designation.errors && (formdata.controls.designation.dirty || formdata.controls.designation.touched)" class="alert-danger">
+                    <div *ngIf="formdata.controls.designation.errors.required">
+                        Designation is Required
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Manager ID</label> 
+            <div class="col-md-10">
+                <select  formControlName="managerid">
+                    <option value={{null}}>No Manager</option>
+                    <option *ngFor="let emp of employees" value="{{emp.employeeid}}">{{emp.employeename}}</option>
+                  </select>
+                  
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Contact No</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="contactno" value="" class = "control-label col-md-2">
+              <div *ngIf="formdata.controls.contactno.errors && (formdata.controls.contactno.dirty || formdata.controls.contactno.touched)" class="alert-danger">
+                    <div *ngIf="formdata.controls.contactno.errors.required">
+                    Contact No is Required
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Email ID</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="emailid" value="" class = "control-label col-md-2">
+              <div *ngIf="formdata.controls.emailid.errors && (formdata.controls.emailid.dirty || formdata.controls.emailid.touched)" class="alert-danger">
+                    <div *ngIf="formdata.controls.emailid.errors.required">
+                        Email ID is Required
+                    </div>
+                    <div *ngIf="formdata.controls.emailid.errors.pattern">
+                            Email ID is Not Valid
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class = "control-label col-md-2">Skill Sets</label> 
+            <div class="col-md-10">
+              <input type="text" formControlName="skillset" value="" class = "control-label col-md-2">
+              <div *ngIf="formdata.controls.skillset.errors && (formdata.controls.skillset.dirty || formdata.controls.skillset.touched)" class="alert-danger">
+                    <div *ngIf="formdata.controls.skillset.errors.required">
+                      Skill Set is Required
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Update" class="btn btn-primary" [disabled] = "!formdata.valid" />
+            |<a href="./Employees/show">Back</a>
+            </div>
+        </div>
+    </div>
+</form>

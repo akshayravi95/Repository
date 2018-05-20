@@ -1,0 +1,39 @@
+<h3>Create</h3>
+<form [formGroup]="formdata" (ngSubmit)="onclicksubmit(formdata.value)">
+    <div class="form-horizontal">
+        <h4>Manager Comments</h4>
+        <div class="form-group">
+            <label class = "control-label col-md-2">Comments</label> 
+            <div class="col-md-10">
+              <textarea rows="5" formControlName="comments" value="" class = "control-label col-md-2"></textarea>
+              <div *ngIf="formdata.controls.comments.errors && (formdata.controls.comments.dirty || formdata.controls.comments.touched)" class="alert-danger">
+                <div *ngIf="formdata.controls.comments.errors.required">
+                     Comments  is Required
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class = "control-label col-md-2">Project ID</label> 
+            <div class="col-md-10">
+              <input  type="text" formControlName="taskid" value="" class = "control-label col-md-2 " disabled>
+              <div *ngIf="formdata.controls.taskid.errors && (formdata.controls.taskid.dirty || formdata.controls.taskid.touched)" class="alert-danger">
+                <div *ngIf="formdata.controls.taskid.errors.required">
+                     Task ID  is Required
+                    
+                </div>
+            </div>
+            </div>
+          </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success" [disabled] = "!formdata.valid" />
+               | <a href="/Comments/get/{{id}}">Back</a>                
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+</div>
