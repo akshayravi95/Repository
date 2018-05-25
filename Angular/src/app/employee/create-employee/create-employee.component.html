@@ -6,12 +6,11 @@
             <label class = "control-label col-md-2">Employee Name</label> 
             <div class="col-md-10 ">
               <input type="text" formControlName="employeename" value="" class = "control-label col-md-2"> 
-              <div *ngIf="formdata.controls.employeename.errors && (formdata.controls.employeename.dirty || formdata.controls.employeename.touched)" class="alert-danger">
-                <div *ngIf="formdata.controls.employeename.errors.required">
-                    Name is Required
-                    
-                </div>
-            </div>
+              <span *ngIf="formdata.controls.employeename.errors && (formdata.controls.employeename.dirty || formdata.controls.employeename.touched)" >
+                <span *ngIf="formdata.controls.employeename.errors.required" style="color:darkred">
+                    Name is Required. 
+                </span>
+            </span>
             </div>
         </div>
 
@@ -19,12 +18,12 @@
             <label class = "control-label col-md-2">Designation</label> 
             <div class="col-md-10">
               <input type="text" formControlName="designation" value="" class = "control-label col-md-2">
-              <div *ngIf="formdata.controls.designation.errors && (formdata.controls.designation.dirty || formdata.controls.designation.touched)" class="alert-danger">
-                    <div *ngIf="formdata.controls.designation.errors.required">
+              <span *ngIf="formdata.controls.designation.errors && (formdata.controls.designation.dirty || formdata.controls.designation.touched)" >
+                    <span *ngIf="formdata.controls.designation.errors.required" style="color:darkred">
                         Designation is Required
                         
-                    </div>
-                </div>
+                    </span>
+                </span>
             </div>
         </div>
 
@@ -43,12 +42,12 @@
             <label class = "control-label col-md-2">Contact No</label> 
             <div class="col-md-10">
               <input type="text" formControlName="contactno" value="" class = "control-label col-md-2">
-              <div *ngIf="formdata.controls.contactno.errors && (formdata.controls.contactno.dirty || formdata.controls.contactno.touched)" class="alert-danger">
-                    <div *ngIf="formdata.controls.contactno.errors.required">
+              <span *ngIf="formdata.controls.contactno.errors && (formdata.controls.contactno.dirty || formdata.controls.contactno.touched)" class="alert-danger">
+                    <span *ngIf="formdata.controls.contactno.errors.required"style="color:darkred">
                     Contact No is Required
                         
-                    </div>
-                </div>
+                    </span>
+                </span>
             </div>
         </div>
 
@@ -56,26 +55,26 @@
             <label class = "control-label col-md-2">Email ID</label> 
             <div class="col-md-10">
               <input type="email" formControlName="emailid" value="" class = "control-label col-md-2">
-              <div *ngIf="formdata.controls.emailid.errors && (formdata.controls.emailid.dirty || formdata.controls.emailid.touched)" class="alert-danger">
-                    <div *ngIf="formdata.controls.emailid.errors.required">
+              <span *ngIf="formdata.controls.emailid.errors && (formdata.controls.emailid.dirty || formdata.controls.emailid.touched)" >
+                    <span *ngIf="formdata.controls.emailid.errors.required" style="color:darkred">
                         Email ID is Required
-                    </div>
-                    <div *ngIf="formdata.controls.emailid.errors.pattern && (formdata.controls.emailid.dirty || formdata.controls.emailid.touched)">
+                    </span>
+                    <span *ngIf="formdata.controls.emailid.errors.pattern && (formdata.controls.emailid.dirty || formdata.controls.emailid.touched)" style="color:darkred">
                             Email ID is Not Valid
-                        </div>
-                </div>
+                    </span>
+                </span>
             </div>
         </div>
         <div class="form-group">
             <label class = "control-label col-md-2">Skill Sets</label> 
             <div class="col-md-10">
               <input type="text" formControlName="skillset" value="" class = "control-label col-md-2">
-              <div *ngIf="formdata.controls.skillset.errors && (formdata.controls.skillset.dirty || formdata.controls.skillset.touched)" class="alert-danger">
-                    <div *ngIf="formdata.controls.skillset.errors.required">
+              <span *ngIf="formdata.controls.skillset.errors && (formdata.controls.skillset.dirty || formdata.controls.skillset.touched)" >
+                    <span *ngIf="formdata.controls.skillset.errors.required" style="color:darkred">
                       Skill Set is Required
                         
-                    </div>
-                </div>
+                    </span>
+                </span>
             </div>
         </div>
 
